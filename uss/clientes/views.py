@@ -5,7 +5,6 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import render, get_object_or_404
 from .models import Cliente
-from .forms import ClienteForm
 from django.views.generic.edit import (
     CreateView,
     UpdateView,

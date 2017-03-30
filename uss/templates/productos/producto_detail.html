@@ -1,21 +1,19 @@
 {% extends 'adminlte/base.html' %}
-	{% block title %}Detalle del CLiente{% endblock %}
+	{% block title %}Detalle del Producto{% endblock %}
 	{% block content %}
 	{% load bootstrap3 %}
 	{% load staticfiles %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-	<h2>ID: {{ cliente.id }}</h2>
-	<h1>Razón Social: {{ cliente.Razon_Social }}</h1>
-	<h2>Contacto: {{ cliente.Contacto }}</h2>
-	<h3>Telefono 1: {{ cliente.Telefono_1 }}</h3>
-	<h3>Telefono 2: {{ cliente.Telefono_2 }}</h3>
-	<h3>Telefono 3: {{ cliente.Telefono_3 }}</h3>
-	<h4>Email: {{ cliente.Email }}</h4>
+	<h2>ID: {{ productos.id }}</h2>
+	<h1>Medida/Diametro: {{ producto.Medida_Diametro }}</h1>
+	<h2>Contacto: {{ producto_Armazon }}</h2>
+	<h3>Telefono 1: {{ producto.Tela }}</h3>
+	<h4>Email: {{ producto.Precio }}</h4>
 	{% buttons %}
-		<a href="{% url "clientes:edit" cliente.id %}">
+		<a href="{% url "productos:edit" producto.id %}">
 			<button type="submit" class="ui-button">{% bootstrap_icon "pencil" %}Editar</button>
 		 </a>
-		<a href="{% url "clientes:list" %}">
+		<a href="{% url "productos:list" %}">
 			<button type="submit" class="ui-button">{% bootstrap_icon "arrow-left" %}Regresar</button>
 		 </a>
         {% endbuttons %}

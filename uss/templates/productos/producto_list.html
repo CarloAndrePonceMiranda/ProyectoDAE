@@ -1,0 +1,36 @@
+{% extends 'adminlte/base.html' %}
+	{% block title %}Lista de Productos{% endblock %}
+	{% block content %}
+    	{% load bootstrap3 %}
+        <h1>Lista de Productos</h1>
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+        <table class="table1">
+        <thead>
+            
+                <th>Id</th>
+                <th> </th>
+                <th>Medida/Diametro</th>
+                <th> </th>
+                <th>Armazon</th>
+                <th> </th>
+                <th>Tela</th>
+                <th> </th>
+                <th>Precio</th>
+                <th> </th>
+                <th>Acciones</th>
+        </thead>
+        {% for productos in object_list %}
+            <tr>
+                <td align="center" style="vertical-align:middle">{{ productos.id }}<td>
+                    <td align="center" style="vertical-align:middle">{{ productos.Medida_Diametro }}<td>
+                <td align="center" style="vertical-align:middle">{{ productos.Armazon }}<td>
+                    <td align="center" style="vertical-align:middle">{{ productos.Tela }}<td>
+                        <td align="center" style="vertical-align:middle">{{ productos.Precio }}<td>
+                <td style="vertical-align:middle">{% buttons %}
+                    <a href="{% url "productos:detail" productos.id %}"><button type="submit" class="ui-button">{% bootstrap_icon "eye-open" %}Ver</button>
+                    </a><a href="{% url "productos:delete" productos.id %}"><button type="submit" class="ui-button">{% bootstrap_icon "erase" %}Borrar</button></a>{% endbuttons %}
+                </td>
+            </tr>
+        {% endfor %}
+{% endblock %}  

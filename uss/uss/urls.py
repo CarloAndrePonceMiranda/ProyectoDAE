@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.default.urls')),
- 	url(r'^', include('clientes.urls', namespace='clientes')),
- 	#url(r'^', include('courses.urls', namespace='courses')),
+ 	url(r'^clientes/', include('clientes.urls', namespace='clientes')),
+ 	url(r'^productos/', include('productos.urls', namespace='productos')),
  	#url(r'^', include('courses.urls', namespace='courses')),
 ]
