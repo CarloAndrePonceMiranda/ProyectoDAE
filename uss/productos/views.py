@@ -13,19 +13,23 @@ from django.views.generic.edit import (
 
 class ProductoList(ListView):
     model = Producto
+    instances = Producto.objects.all().order_by('id')
 class ProductoDetail(DetailView):
     model = Producto
 class ProductoCreation(CreateView):
     model = Producto
     success_url = reverse_lazy('productos:list')
     fields = ['id', 'Medida_Diametro', 'Armazon', 'Precio','Tela']
+    instances = Producto.objects.all().order_by('id')
 class ProductoUpdate(UpdateView):
     model = Producto
     success_url = reverse_lazy('productos:list')
     fields = ['id', 'Medida_Diametro', 'Armazon', 'Precio','Tela']
+    instances = Producto.objects.all().order_by('id')
 class ProductoDelete(DeleteView):
     model = Producto
     success_url = reverse_lazy('productos:list')
+    instances = Producto.objects.all().order_by('id')
 
 def principal(request):
     producto = Producto.objects.order_by('id')

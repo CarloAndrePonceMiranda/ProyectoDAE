@@ -1,0 +1,13 @@
+{% extends 'adminlte/base.html' %}
+	{% block title %}Eliminar {{ producto.Medida_Diametro }}{% endblock %}
+	{% block content %}
+	{% load bootstrap3 %}
+<form method="post">{% csrf_token %}
+    <h1>¿Estás seguro que deseas borrar el curso "{{ cotizaciones.id }}</h1>
+    <h2>{{ cotizaciones.Fecha }}</h2>
+    <h3>{{ cotizaciones.Estado }}</h3>
+    <h4>{{ cotizaciones.id_cliente }}?"</h4>
+    <br>
+    <input type="submit" value="Borrar" />
+</form>
+	{% endblock %}

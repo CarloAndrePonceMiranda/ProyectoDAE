@@ -11,3 +11,5 @@ class Cliente(models.Model):
 	Telefono_3 = models.CharField(max_length=255)
 	Email = models.CharField(max_length=255)
 	
+def __str__(self):
+        return '{}'.format(self.Razon_Social)

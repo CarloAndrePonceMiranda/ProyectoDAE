@@ -13,12 +13,14 @@ from django.views.generic.edit import (
 
 class ClienteList(ListView):
     model = Cliente
+    Cliente.objects.order_by('id')
 class ClienteDetail(DetailView):
     model = Cliente
 class ClienteCreation(CreateView):
     model = Cliente
     success_url = reverse_lazy('clientes:list')
     fields = ['id', 'Razon_Social', 'Contacto', 'Telefono_1','Telefono_2','Telefono_3','Email']
+    Cliente.objects.order_by('id')
 class ClienteUpdate(UpdateView):
     model = Cliente
     success_url = reverse_lazy('clientes:list')

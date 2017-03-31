@@ -1,12 +1,13 @@
 {% extends 'adminlte/base.html' %}
-	{% block title %}Add and Edit{% endblock %}
+	{% block title %}Agregar y Editar{% endblock %}
 	{% block content %}
 	{% load bootstrap3 %}
 	{% load staticfiles %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+        <h1>Agregar/Editar Cotizaciones</h1>
 	<form method="post">
     {% csrf_token %}
     {% bootstrap_form form %}
-    <input type="submit" value="Agregar" />
+    <input type="submit" value="Agregar/Editar" />
 </form>
 {% endblock %}

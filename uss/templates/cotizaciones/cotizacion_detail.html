@@ -1,21 +1,18 @@
 {% extends 'adminlte/base.html' %}
-	{% block title %}Detalle del CLiente{% endblock %}
+	{% block title %}Detalle del Cotizacion{% endblock %}
 	{% block content %}
 	{% load bootstrap3 %}
 	{% load staticfiles %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-	<h2>ID: {{ cliente.id }}</h2>
-	<h1>Razón Social: {{ cliente.Razon_Social }}</h1>
-	<h2>Contacto: {{ cliente.Contacto }}</h2>
-	<h3>Telefono 1: {{ cliente.Telefono_1 }}</h3>
-	<h3>Telefono 2: {{ cliente.Telefono_2 }}</h3>
-	<h3>Telefono 3: {{ cliente.Telefono_3 }}</h3>
-	<h4>Email: {{ cliente.Email }}</h4>
+	<h2>ID: {{ cotizacion.id }}</h2>
+	<h3>Fecha: {{ cotizacion.Fecha }}</h3>
+	<h4>Estado: {{ cotizacion.Estado }}</h4>
+	<h4>Id_Cliente: {{ cotizacion.id_cliente }}</h4>
 	{% buttons %}
-		<a href="{% url "clientes:edit" cliente.id %}">
+		<a href="{% url "cotizaciones:edit" cotizacion.id %}">
 			<button type="submit" class="ui-button">{% bootstrap_icon "pencil" %}Editar</button>
 		 </a>
-		<a href="{% url "clientes:list" %}">
+		<a href="{% url "cotizaciones:list" %}">
 			<button type="submit" class="ui-button">{% bootstrap_icon "arrow-left" %}Regresar</button>
 		 </a>
         {% endbuttons %}

@@ -82,12 +82,12 @@ WSGI_APPLICATION = 'uss.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-#DATABASES = {
-    #'default': {
-     #   'ENGINE': 'django.db.backends.sqlite3',
-      #  'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    #}
-#}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -145,6 +145,6 @@ STATICFILES_DIRS=[
 ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, use a different value.
 REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
 SITE_ID=1
-LOGIN_REDIRECT_URL='/'
+LOGIN_REDIRECT_URL='/cotizaciones/'
 LOGOUT_REDIRECT_URL='/accounts/login/'
 REGISTRATION_OPEN = True

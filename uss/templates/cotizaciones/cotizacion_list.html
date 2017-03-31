@@ -1,0 +1,33 @@
+{% extends 'adminlte/base.html' %}
+	{% block title %}Lista de Cotizacion{% endblock %}
+	{% block content %}
+    	{% load bootstrap3 %}
+        <h1>Lista de Cotizaciones</h1>
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+        <table class="table1">
+        <thead>
+            
+                <th>Id</th>
+                <th> </th>
+                <th>Fecha</th>
+                <th> </th>
+                <th>Estado</th>
+                <th> </th>
+                <th>id_cliente</th>
+                <th> </th>
+                <th>Acciones</th>
+        </thead>
+        {% for cotizaciones in object_list %}
+            <tr>
+                <td align="center" style="vertical-align:middle">{{ cotizaciones.id }}<td>
+                    <td align="center" style="vertical-align:middle">{{ cotizaciones.Fecha }}<td>
+                <td align="center" style="vertical-align:middle">{{ cotizaciones.Estado }}<td>
+                    <td align="center" style="vertical-align:middle">{{ cotizaciones.id_cliente }}<td>
+                <td style="vertical-align:middle">{% buttons %}
+                    <a href="{% url "cotizaciones:detail" cotizaciones.id %}"><button type="submit" class="ui-button">{% bootstrap_icon "eye-open" %}Ver</button>
+                    </a><a href="{% url "cotizaciones:delete" cotizaciones.id %}"><button type="submit" class="ui-button">{% bootstrap_icon "erase" %}Borrar</button></a>{% endbuttons %}
+                </td>
+            </tr>
+        {% endfor %}
+{% endblock %}  

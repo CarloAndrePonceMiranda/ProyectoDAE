@@ -4,11 +4,11 @@
 	{% load bootstrap3 %}
 	{% load staticfiles %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
-	<h2>ID: {{ productos.id }}</h2>
+	<h2>ID: {{ producto.id }}</h2>
 	<h1>Medida/Diametro: {{ producto.Medida_Diametro }}</h1>
-	<h2>Contacto: {{ producto_Armazon }}</h2>
-	<h3>Telefono 1: {{ producto.Tela }}</h3>
-	<h4>Email: {{ producto.Precio }}</h4>
+	<h2>Arnazon: {{ producto.Armazon }}</h2>
+	<h3>Tela: {{ producto.Tela }}</h3>
+	<h4>Precio: ${{ producto.Precio }}</h4>
 	{% buttons %}
 		<a href="{% url "productos:edit" producto.id %}">
 			<button type="submit" class="ui-button">{% bootstrap_icon "pencil" %}Editar</button>
